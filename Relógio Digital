@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Round clocks</title>
+<style>
+    html {
+  height: 100%
+}
+body {
+font-family: 'Abril Fatface', cursive;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  height: 100%;
+  background-image: url(https://image.freepik.com/fotos-gratis/mesa-de-madeira-em-parede-de-textura-de-papel-tropical-modelo-mapeado-para-exibicao-de-produto-apresentacao-de-negocios_1253-1457.jpg);
+  background-size: cover;
+  background-position: 0 bottom;
+  background-repeat: no-repeat;
+}
+.container {
+  position: relative;
+  top: 30%;
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #000;
+  border: 16px solid #fff;
+  border-radius: 30px;
+  box-shadow: 0 7px 20px -7px #000;
+}
+.shadow {
+  position: absolute;
+  opacity: 1;
+    top: 22px;
+    left: 60px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,.7) 50%, rgba(0,0,0,.3));
+    transform-style: preserve-3d;
+    transform: rotate3d(1,0,0,45deg) skewX(-30deg);
+/*     box-shadow: inset 0 0 30px 10px #333,
+      0 0 10px #333; */
+  filter: blur(10px);
+    z-index: -1;
+}
+.seconds-wrapper,
+.minutes-wrapper,
+.hours-wrapper {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border: 7px solid #333;
+  background: #dedede;
+  margin: 20px 20px; 
+  box-sizing: border-box;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: inset 0 0 10px 10px #ccc;
+}
+.left-half,.right-half {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: -7px;
+  left: -7px;
+  clip: rect(0, 100px, 100px, 50px);
+  border-radius: 50%;
+}
+.right-half {
+  clip: rect(0, 50px, 100px, 0px);
+}
+.left-half-border,
+.right-half-border{
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+box-shadow: inset 0 0 20px 0px #c0ff8a;
+  border: 7px solid #689f38;
+  border-radius: 50%;
+  transform: rotate(-180deg);
+  clip: rect(0, 100px, 100px, 50px);
+}
+.right-half-border {
+  transform: rotate(0deg);
+}
+.counter,
+.min-counter,
+.hours-counter {
+  font-size: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+/*   text-shadow: 2px -1px 1px grey,
+               -1px 1px 1px silver; */
+}
+
+.dots {
+  font-size: 50px;
+  line-height: 145px;
+  display: inline-block;
+  vertical-align: top;
+/*   position: absolute;
+  top: 50%;
+  transform: translateY(-50%); */
+  transition: .4s;
+  opacity: 0;
+  color: #689f38;
+}
+.opacity {
+  transition: .4s;
+  opacity: 1;
+}
+@media all and (max-width: 1000px) {
+  .container {
+   top: 52%;
+  }
+}
+  </style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+<body>
+<link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+<div class="container">
+<div class="shadow"></div>
+<div class="hours-wrapper">
+<span class="hours-counter"></span>
+<div class="left-half">
+<div class="left-half-border"></div>
+</div>
+<div class="right-half">
+<div class="right-half-border"></div>
+</div>
+</div>
+<span class="dots">:</span>
+<div class="minutes-wrapper">
+<span class="min-counter"></span>
+<div class="left-half">
+<div class="left-half-border"></div>
+</div>
+<div class="right-half">
+<div class="right-half-border"></div>
+</div>
+</div>
+<span class="dots">:</span>
+<div class="seconds-wrapper">
+<span class="counter"></span>
+<div class="left-half">
+<div class="left-half-border"></div>
+</div>
+<div class="right-half">
+<div class="right-half-border"></div>
+</div>
+</div>
+</div>
+</body>
+<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js"></script>
+<script id="rendered-js">
+      var counter = document.querySelector(".counter"),
+minCounter = document.querySelector(".min-counter"),
+hoursCounter = document.querySelector(".hours-counter"),
+leftHalf = document.getElementsByClassName("left-half-border"),
+rightHalf = document.getElementsByClassName("right-half-border"),
+dots = document.getElementsByClassName("dots"),
+now = new Date();
+
+setInterval(function write() {
+  now = new Date();
+  counter.innerHTML = now.getSeconds();
+  dots[0].classList.toggle("opacity");
+  dots[1].classList.toggle("opacity");
+
+  if (counter.innerHTML == 0) {
+    rightHalf[2].style.transform = "rotate(180deg)";
+    leftHalf[2].style.transform = "rotate(0deg)";
+    counter.innerHTML = -"0" + counter.innerHTML;
+  } else
+  if (counter.innerHTML < 10) {
+    counter.innerHTML = -"0" + counter.innerHTML;
+    angle = -180 + counter.innerHTML * 6;
+    leftHalf[2].style.transform = "rotate(" + angle + "deg)";
+    rightHalf[2].style.transform = "rotate(0deg)";
+  } else if (counter.innerHTML < 30) {
+    angle = -180 + counter.innerHTML * 6;
+    leftHalf[2].style.transform = "rotate(" + angle + "deg)";
+    rightHalf[2].style.transform = "rotate(0deg)";
+  } else
+  {
+    angle = -180 + counter.innerHTML * 6;
+    leftHalf[2].style.transform = "rotate(0deg)";
+    rightHalf[2].style.transform = "rotate(" + angle + "deg)";
+  };
+
+  minCounter.innerHTML = now.getMinutes();
+  if (minCounter.innerHTML == 0) {
+    rightHalf[1].style.transform = "rotate(180deg)";
+    leftHalf[1].style.transform = "rotate(0deg)";
+    minCounter.innerHTML = "0" + minCounter.innerHTML;
+  } else if (minCounter.innerHTML < 10) {
+    minCounter.innerHTML = "0" + minCounter.innerHTML;
+  } else if (minCounter.innerHTML < 30) {
+    angle = -180 + minCounter.innerHTML * 6;
+    leftHalf[1].style.transform = "rotate(" + angle + "deg)";
+    rightHalf[1].style.transform = "rotate(0deg)";
+  } else {
+    angle = -180 + minCounter.innerHTML * 6;
+    leftHalf[1].style.transform = "rotate(0deg)";
+    rightHalf[1].style.transform = "rotate(" + angle + "deg)";
+  }
+
+  hoursCounter.innerHTML = now.getHours();
+  if (hoursCounter.innerHTML == 0) {
+    rightHalf[0].style.transform = "rotate(180deg)";
+    leftHalf[0].style.transform = "rotate(0deg)";
+    hoursCounter.innerHTML = -"0" + hoursCounter.innerHTML;
+  } else if (hoursCounter.innerHTML < 10) {
+    hoursCounter.innerHTML = -"0" + hoursCounter.innerHTML;
+    angle = -180 + hoursCounter.innerHTML * 6;
+    leftHalf[0].style.transform = "rotate(" + angle + "deg)";
+    rightHalf[0].style.transform = "rotate(0deg)";
+  } else if (hoursCounter.innerHTML < 10) {
+    angle = -180 + hoursCounter.innerHTML * 6;
+    leftHalf[0].style.transform = "rotate(" + angle + "deg)";
+    rightHalf[0].style.transform = "rotate(0deg)";
+  } else {
+    angle = -180 + hoursCounter.innerHTML * 6;
+    leftHalf[0].style.transform = "rotate(0deg)";
+    rightHalf[0].style.transform = "rotate(" + angle + "deg)";
+  }
+}, 1000);
+      //# sourceURL=pen.js
+    </script>
+</body>
+</html>
