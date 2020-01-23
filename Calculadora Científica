@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<HTML>
+<head>
+<meta charset="UTF-8">
+<link href="index.css" rel="stylesheet" type="text/css">
+<script src="index.js"></script>
+
+
+</head>
+<body onload="inicio ()">
+<header>
+<h1>Calculadora cientifica</h1>
+
+</header>
+<table border ="solid 2px blue" ; align="center">
+<tr>
+<td colspan="7">Calculadora</td>
+</tr>
+<tr>
+<td colspan="7"><input id="id_pantalla" type="text" style="text-align:right" onclick="vaciar()"/>
+</tr>
+<tr align ="center">
+<td><button class="resto" onclick="primo()">prim</button></td>
+<td><button class="resto" onclick="sumat()">sum</button></td>
+<td><button class="resto" onclick="prod()">prod</button></td>
+<td><button class="resto" onclick="mcd()">mcd</button></td>
+<td><button class="resto" onclick="mcm()">mcm</button></td>
+</tr>
+<tr align ="center">
+<td><button class="resto" onclick="asen()">sen<sup>-1</sup></button></td>
+<td><button class="resto" onclick="acos()">cos<sup>-1</sup></button></td>
+<td><button class="resto" onclick="atg()">tg<sup>-1</sup></button></td>
+<td><button class="resto"  onclick="divisores()">divs</button></td>
+<td><button class="resto"  onclick="eups()">&#8364;/PS</button></td>
+<tr align ="center">
+<td><button class="resto" onclick="inver()">x<sup>-1</sup></button></td>
+<td><button class="resto" onclick="cambio()">+-</button></td>
+<td><button class="resto" onclick="xy()">x<sup>y</sup></button></td>
+<td><button class="resto" onclick="fact()">n!</button></td>
+<td><button class="resto" onclick="ent()">ent</button></td>
+<tr align ="center">
+<td><button class="resto" onclick="raiz()">&#8730;</button></td>
+<td><button class="resto" onclick ="num.value =pi">&#8719;</button></td>
+<td><button  class="resto" onclick="sen()">sen</button></td>
+<td><button  class="resto" onclick="cos()">cos</button></td>
+<td><button  class="resto" onclick="tg()">tg</button></td>
+
+</tr>
+<tr align ="center">
+<td><button class="resto" onclick="quad()">x<sup>2</sup></button></td>
+<td><button class="resto" onclick="topo()">x<sup>3</sup></button></td>
+<td><button class="resto" onclick="log()">log</button></td>
+<td><button class="resto" onclick="ln()">ln</button></td>
+<td><button class="resto" onclick ="num.value =e">e</button></td>
+<tr align ="center">
+<td><button class="num" onclick ="num.value +='7'">7</button></td>
+<td><button class="num" onclick ="num.value +='8'">8</button></td>
+<td><button class="num" onclick ="num.value +='9'">9</button></td>
+<td><button class="borrar" onclick="bparcial()">DEL</button></td>
+<td><button class="borrar" onclick="vaciar()">C</button></td>
+<tr align ="center">
+<td><button class="num" onclick ="num.value +='4'">4</button></td>
+<td><button class="num" onclick ="num.value +='5'">5</button></td>
+<td><button class="num" onclick ="num.value +='6'">6</button></td>
+<td><button class="fbasicas" onclick="suma()">+</button></td>
+<td><button class="fbasicas" onclick="resta()">-</button></td>
+</tr>
+<tr align ="center">
+<td><button class="num" onclick ="num.value +='1'">1</button></td>
+<td><button class="num" onclick ="num.value +='2'">2</button></td>
+<td><button class="num" onclick ="num.value +='3'">3</button></td>
+<td><button class="fbasicas" onclick="mult()">x</button></td>
+<td><button class="fbasicas" onclick="div()">/</button></td>
+<tr align ="center">
+<td><button class="num" onclick ="num.value +='0'">0</button></td>
+<td><button class="num" onclick ="num.value +='.'">.</button></td>
+<td><button class="num" onclick ="num.value +=','">,</button></td>
+<td colspan="7"><button class="doble" onclick="calcular()">=</button></td>
+</tr>
+</table>
+<style>
+body{background-color:#80e6e6;color:#3c3939}
+h1{text-align:-webkit-center}
+a{margin:13%;}
+article{float:left; width:40%;border:solid 2px  grey;}
+footer {clear:both;}
+button{width:48px;margin:4px;border:2px double; height:25px;background-color:#E0FFFF;}
+button:hover{background-color:#1E90FF;}
+.num{background-color:#ccff70;}
+.borrar{background-color:#b8d1e6;}
+.fbasicas{background-color:#00ff99;}
+.resto{background-color:#66eb5c;} 
+table{background-color:grey;width:40px;}
+#id_pantalla{background-color:#DCDCDC;
+    margin:0.5em auto;padding:0 0.25em;
+	  border:inset 5px;border-radius:4px;
+	  width:95%;display:inling-block;
+	  font-family:monospace;font-size:1.2em;letter-spacing:0.20em;}
+	</style>
+	
+	<script>
+	var num=0, acc =0, hol=0, op="";
+e=Math.E; pi=Math.PI;
+
+function inicio (){num =document.getElementById("id_pantalla");}
+function vaciar (){num.value ="";}
+
+function quad (){num.value= Math.pow(num.value,2);}
+function topo (){num.value= Math.pow(num.value,3);}
+function raiz (){num.value= Math.pow(num.value,0.5);}
+function inver (){num.value= Math.pow(num.value,-1);}
+function ele(){num.value= Math.pow(num.value,hol+num.value);}
+function cambio(){num.value=num.value * -1}
+function eups(){num.value=num.value * 166.386}
+function ent(){ num.value = parseInt(num.value /1);}
+function ln (){num.value= Math.log(num.value);}
+function log(){num.value= Math.log10(num.value);}
+function sen(){num.value= Math.sin(num.value*Math.PI/180);}
+function cos(){num.value= Math.cos(num.value*Math.PI/180);}
+function tg(){num.value= Math.tan(num.value*Math.PI/180);}
+function asen() {num.value = 180*Math.asin (num.value)/pi;}
+function acos() {num.value = 180*Math.acos (num.value)/pi;}
+function atag() {num.value = 180*Math.atan (num.value)/pi;}
+function fact(){
+ var dato=num.value;
+ var resultado=num.value;
+ for(var i=dato-1;i>=1;i--){
+  resultado = resultado * i;
+ 
+  }
+ num.value=resultado;
+}
+function divisores (){ var n1 = num.value;
+		var divi =[];
+		for (var i=1; i<=n1; i++){
+			if (n1 % i === 0) {divi.push(i);}
+			  
+		num.value = divi;	  
+			 }
+		}
+function prod() { 
+		var numeros =num.value.split(",");
+		var i = 0, acc = 1;
+		while ( i < numeros.length ) {
+		acc = parseFloat(acc * (+numeros[i]));
+		i++;
+		}
+  
+		num.value = acc;}	
+function sumat() { 
+		var numeros =num.value.split(",");
+		var i = 0, acc = 0;
+		while ( i < numeros.length ) {
+		acc = parseFloat(acc + (+numeros[i]));
+		i++;
+		}
+  
+		num.value = acc;}
+function mcd (){
+	var cd = num.value.split(",");
+	var a= cd[0], b = cd[1];
+	var resto =0;
+	while (a % b !== 0){
+		resto = a % b;
+		a=b;
+		b=resto; 
+	}
+	  r = b;
+	  num.value = r;
+	  return r;
+  }	
+function mcm(){
+	var cd = num.value.split(",");
+	var a= cd[0], d = cd[1];
+	var b = mcd (a,d);
+	num.value = a*d/b;
+	}
+function primo(){
+		var count =0, n = num.value;
+		for(var i =1;i<=n; i++){
+		if (n % i===0){count ++;}}
+		if (count === 2){
+			num.value= num.value + " es primo";
+			}
+		else{
+		  num.value= num.value + " no es primo";}
+		
+			
+		   
+		
+  }
+function ent(){  
+   num.value = parseInt(num.value);  
+    if (isNaN(num.value)) 
+          return 0; 
+    else{  
+          return num.value;  
+    }  
+}
+function bparcial(){ 
+         cifras=num.value.length; 
+         br=num.value.substr(cifras-1,cifras)
+         num.value=num.value.substr(0,cifras-1)
+         if (num.value=="") {num.value="0";} 
+         if (br==".") {coma=0;} 
+         id_pantalla=num.value; 
+         }
+
+function suma (){acc = +num.value; op ="+"; vaciar();}
+function resta(){acc = +num.value; op ="-"; vaciar();}
+function mult(){acc = +num.value; op ="x"; vaciar();}
+function div(){acc = +num.value; op ="/"; vaciar();}
+function xy(){acc = +num.value; op= "xy"; vaciar ();}
+function calcular (){
+  switch (op){
+    case("+"):num.value = +acc + (+num.value); op=""; 
+    break;
+     case("-"):num.value = +acc - (+num.value); op=""; 
+    break;
+     case("x"):num.value = +acc * (+num.value); op="";
+    break;
+     case("/"):num.value = +acc / (+num.value); op="";
+    break;
+     case("xy"):num.value = Math.pow(+acc,+num.value);op=""; 
+    
+  }
+}
+</script>
+</HTML>
