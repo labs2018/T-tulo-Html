@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+<meta charset="UTF-8">
+<title>Equal height columns</title>
+<script src="https://use.fontawesome.com/7fc558487d.js"></script>
+<style>
+    .doublecolumns-wrapper,
+.doublecolumns-wrapper *,
+.doublecolumns-wrapper *:before,
+.doublecolumns-wrapper *:after{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.doublecolumns-wrapper{
+	overflow: hidden;
+	position: relative;
+	max-width: 1200px;
+	margin: auto;
+	font: 300 25px/1.5 "Roboto", sans-serif;
+	background: #01FFFF;
+}
+.doublecolumn{
+	float: left;
+	padding: 30px;
+	width: 100%;
+}
+.doublecolumn-box,
+.doublecolumn p{
+	position: relative;
+	margin: 0 0 60px;
+}
+.doublecolumn p:last-child,
+.doublecolumn-box:last-child{
+	margin: 0;
+}
+.doublecolumn-box{
+	padding-left: 45px;
+}
+.doublecolumn-box:before{
+	content: "\f05d";
+	position: absolute;
+	top: 2px;
+	left: 0;
+	font: 32px/1 FontAwesome;
+}
+
+@media( min-width: 768px ) {
+	.doublecolumns-wrapper{
+		margin-bottom: 30px;
+		border-left: 30px solid #FFF;
+		border-right: 30px solid #FFF;
+	}
+	.doublecolumns-wrapper:before{
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 50%;
+		bottom: 0;
+		display: block;
+		margin-left: -15px;
+		width: 30px;
+		background: #FFF;
+	}
+	.doublecolumn{
+		width: 50%;
+	}
+	.doublecolumn:nth-child(odd){
+		padding-right: 45px;
+	}
+	.doublecolumn:nth-child(even){
+		padding-left: 45px;
+	}
+}
+  </style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+	<body translate="no">
+		<div class="doublecolumns-wrapper">
+		<div class="doublecolumn">
+		<div class="doublecolumn-box">
+			<p>Studio Alberto | Desenvolvedor Web</p>
+		</div>
+		</div>
+
+		<div class="doublecolumn">
+		<div class="doublecolumn-box">
+			<p>Studio Alberto desenvolve sistemas web personalizados,
+			Usa as mais confiáveis metodologias do mercado, aliando 
+			sempre a eficiência com a qualidade, de acordo com a 
+			necessidade de cada empresa. Sistemas web permite melhor
+			acessibilidade, melhor otimização de resultados, fácil manutenção,
+			melhor desempenho e podem ser executados de qualquer computador com acesso à Internet.</p>
+		</div>
+		</div>
+		</div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js'></script>
+</body>
+</html>
