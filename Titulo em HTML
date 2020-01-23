@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+<meta charset="UTF-8">
+<title>Warped</title>
+<style>
+  @import url(https://fonts.googleapis.com/css?family=Montserrat+Alternates:700);
+@import url(https://fonts.googleapis.com/css?family=Fenix);
+
+body {
+    font-size: 18px;
+		width: 100%;
+		height: 600px;
+		background-color: #333;
+		background-size: 100%;
+		background-image: -webkit-gradient(radial, 50% 15%, 0, 50% 15%, 90, color-stop(10%, rgba(255,255,255,0.2)), color-stop(70%, rgba(0,0,0,0)));
+		background-image: -webkit-radial-gradient(50% 15%, rgba(255,255,255,0.2) 10%, rgba(0,0,0,0) 70%);
+		background-image: -moz-radial-gradient(50% 15%, rgba(255,255,255,0.2) 10%, rgba(0,0,0,0) 70%);
+		background-image: -o-radial-gradient(50% 15%, rgba(255,255,255,0.2) 10%, rgba(0,0,0,0) 70%);
+		background-image: -ms-radial-gradient(50% 15%, rgba(255,255,255,0.2) 10%, rgba(0,0,0,0) 70%);
+		background-image: radial-gradient(50% 15%, rgba(255,255,255,0.2) 10%, rgba(0,0,0,0) 70%);
+		padding: 1em;
+	}
+h1 {
+  text-align: center;
+  font-family : 'Montserrat Alternates', sans-serif;
+  font-size: 80px;
+  letter-spacing:0.2em;
+  color: red;
+  text-shadow:
+    1px 1px 0 hsl(216,36%,12%),
+    2px 5px 0 hsl(216,36%,12%);
+}
+h2 {
+  font-family: Fenix, Serif;
+  font-size: 60px;
+  letter-spacing:0.2em;
+  color: white;
+  text-align: center;
+  text-shadow:
+    1px 1px 0 #333,
+    2px 5px 0 #022;
+}
+</style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+<h1>ALBERTO BARCELOS</h1>
+<h2>DESENVOLVEDOR WEB - FRONT-END</h2><br><br><br><br><br><br>
+<h1>Site: http://studio-alberto4.webnode.com</h1>
+<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script id="rendered-js">
+      /**
+ * https://github.com/zipang/warped
+ * Usage example :
+ * <code>
+ * // Warp letters from every h1 titles with the class 'warp'
+ * $("h1.warp").warped();
+ * </code>
+ */
+(function define($) {
+
+  var $warpedStyle;
+
+  function warp(letters, $container) {
+    var first = letters.shift(),last = letters.pop();
+    if (first) {
+      $container.append(first);
+      if (letters.length) {
+        $container.append(warp(letters, $("<span>").addClass("warped")));
+      }
+      if (last) {
+        $container.append(last);
+      }
+    }
+    return $container;
+  }
+
+  $.fn.warped = function () {
+    // Create once the style needed for our effect
+    if (!$warpedStyle) {
+      $warpedStyle = $("<style>").text("span.warped {font-size: 90%; vertical-align: 3%;}").appendTo("head");
+    }
+
+    return $(this).each(function (i, elt) {
+      var $container = $(elt),
+      letters = $container.text().split("");
+
+      $container.empty();
+      warp(letters, $container);
+    });
+  };
+})(jQuery);
+
+$("h1, h2").warped();
+      //# sourceURL=pen.js
+    </script>
+</body>
+</html>
