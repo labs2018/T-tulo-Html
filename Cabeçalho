@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+<title>Texto com sombras</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<style>
+.banner {
+  padding: 70px;
+  text-align: center;
+  overflow: hidden;
+  border-bottom: 5px solid #ccc;
+  background-color: #E13E06;
+}
+.banner h1, .banner h2 {
+  line-height: 1;
+  margin: 0;
+  color: #fff;
+}
+.banner h1 {
+  font-size: 75px;
+  text-shadow: 0px 0px #c83705, 1px 1px #c83705, 2px 2px #c83705, 3px 3px #c83705, 4px 4px #c83705, 5px 5px #c83705, 6px 6px #c83705, 7px 7px #c83705, 8px 8px #c83705, 9px 9px #c83705, 10px 10px #c83705, 11px 11px #c83705, 12px 12px #c83705, 13px 13px #c83705, 14px 14px #c83705, 15px 15px #c83705, 16px 16px #c83705, 17px 17px #c83705, 18px 18px #c83705, 19px 19px #c83705, 20px 20px #c83705, 21px 21px #c83705, 22px 22px #c83705, 23px 23px #c83705, 24px 24px #c83705, 25px 25px #c83705, 26px 26px #c83705, 27px 27px #c83705, 28px 28px #c83705, 29px 29px #c83705, 30px 30px #c83705, 31px 31px #c83705, 32px 32px #c83705, 33px 33px #c83705, 34px 34px #c83705, 35px 35px #c83705, 36px 36px #c83705, 37px 37px #c83705, 38px 38px #c83705, 39px 39px #c83705, 40px 40px #c83705, 41px 41px #c83705, 42px 42px #c83705, 43px 43px #c83705, 44px 44px #c83705, 45px 45px #c83705, 46px 46px #c83705, 47px 47px #c83705, 48px 48px #c83705, 49px 49px #c83705, 50px 50px #c83705, 51px 51px #c83705, 52px 52px #c83705, 53px 53px #c83705, 54px 54px #c83705, 55px 55px #c83705, 56px 56px #c83705, 57px 57px #c83705, 58px 58px #c83705, 59px 59px #c83705, 60px 60px #c83705, 61px 61px #c83705, 62px 62px #c83705, 63px 63px #c83705, 64px 64px #c83705, 65px 65px #c83705, 66px 66px #c83705, 67px 67px #c83705, 68px 68px #c83705, 69px 69px #c83705, 70px 70px #c83705, 71px 71px #c83705, 72px 72px #c83705, 73px 73px #c83705, 74px 74px #c83705, 75px 75px #c83705, 76px 76px #c83705, 77px 77px #c83705, 78px 78px #c83705, 79px 79px #c83705, 80px 80px #c83705, 81px 81px #c83705, 82px 82px #c83705, 83px 83px #c83705, 84px 84px #c83705, 85px 85px #c83705, 86px 86px #c83705, 87px 87px #c83705, 88px 88px #c83705, 89px 89px #c83705, 90px 90px #c83705, 91px 91px #c83705, 92px 92px #c83705, 93px 93px #c83705, 94px 94px #c83705, 95px 95px #c83705, 96px 96px #c83705, 97px 97px #c83705, 98px 98px #c83705, 99px 99px #c83705, 100px 100px #c83705, 101px 101px #c83705, 102px 102px #c83705, 103px 103px #c83705, 104px 104px #c83705, 105px 105px #c83705, 106px 106px #c83705, 107px 107px #c83705, 108px 108px #c83705, 109px 109px #c83705, 110px 110px #c83705, 111px 111px #c83705, 112px 112px #c83705, 113px 113px #c83705, 114px 114px #c83705, 115px 115px #c83705, 116px 116px #c83705, 117px 117px #c83705, 118px 118px #c83705, 119px 119px #c83705, 120px 120px #c83705, 121px 121px #c83705, 122px 122px #c83705, 123px 123px #c83705, 124px 124px #c83705, 125px 125px #c83705, 126px 126px #c83705, 127px 127px #c83705, 128px 128px #c83705, 129px 129px #c83705, 130px 130px #c83705, 131px 131px #c83705, 132px 132px #c83705, 133px 133px #c83705, 134px 134px #c83705, 135px 135px #c83705, 136px 136px #c83705, 137px 137px #c83705, 138px 138px #c83705, 139px 139px #c83705, 140px 140px #c83705, 141px 141px #c83705, 142px 142px #c83705, 143px 143px #c83705, 144px 144px #c83705, 145px 145px #c83705, 146px 146px #c83705, 147px 147px #c83705, 148px 148px #c83705, 149px 149px #c83705, 150px 150px #c83705, 151px 151px #c83705, 152px 152px #c83705, 153px 153px #c83705, 154px 154px #c83705, 155px 155px #c83705, 156px 156px #c83705, 157px 157px #c83705, 158px 158px #c83705, 159px 159px #c83705, 160px 160px #c83705, 161px 161px #c83705, 162px 162px #c83705, 163px 163px #c83705, 164px 164px #c83705, 165px 165px #c83705, 166px 166px #c83705, 167px 167px #c83705, 168px 168px #c83705, 169px 169px #c83705, 170px 170px #c83705, 171px 171px #c83705, 172px 172px #c83705, 173px 173px #c83705, 174px 174px #c83705, 175px 175px #c83705, 176px 176px #c83705, 177px 177px #c83705, 178px 178px #c83705, 179px 179px #c83705, 180px 180px #c83705, 181px 181px #c83705, 182px 182px #c83705, 183px 183px #c83705, 184px 184px #c83705, 185px 185px #c83705, 186px 186px #c83705, 187px 187px #c83705, 188px 188px #c83705, 189px 189px #c83705, 190px 190px #c83705, 191px 191px #c83705, 192px 192px #c83705, 193px 193px #c83705, 194px 194px #c83705, 195px 195px #c83705, 196px 196px #c83705, 197px 197px #c83705, 198px 198px #c83705, 199px 199px #c83705, 200px 200px #c83705;
+}
+.banner h2 {
+  font-size: 40px;
+  text-shadow: 0px 0px #b93305, 1px 1px #b93305, 2px 2px #b93305, 3px 3px #b93305, 4px 4px #b93305, 5px 5px #b93305, 6px 6px #b93305, 7px 7px #b93305, 8px 8px #b93305, 9px 9px #b93305, 10px 10px #b93305, 11px 11px #b93305, 12px 12px #b93305, 13px 13px #b93305, 14px 14px #b93305, 15px 15px #b93305, 16px 16px #b93305, 17px 17px #b93305, 18px 18px #b93305, 19px 19px #b93305, 20px 20px #b93305, 21px 21px #b93305, 22px 22px #b93305, 23px 23px #b93305, 24px 24px #b93305, 25px 25px #b93305, 26px 26px #b93305, 27px 27px #b93305, 28px 28px #b93305, 29px 29px #b93305, 30px 30px #b93305, 31px 31px #b93305, 32px 32px #b93305, 33px 33px #b93305, 34px 34px #b93305, 35px 35px #b93305, 36px 36px #b93305, 37px 37px #b93305, 38px 38px #b93305, 39px 39px #b93305, 40px 40px #b93305, 41px 41px #b93305, 42px 42px #b93305, 43px 43px #b93305, 44px 44px #b93305, 45px 45px #b93305, 46px 46px #b93305, 47px 47px #b93305, 48px 48px #b93305, 49px 49px #b93305, 50px 50px #b93305, 51px 51px #b93305, 52px 52px #b93305, 53px 53px #b93305, 54px 54px #b93305, 55px 55px #b93305, 56px 56px #b93305, 57px 57px #b93305, 58px 58px #b93305, 59px 59px #b93305, 60px 60px #b93305, 61px 61px #b93305, 62px 62px #b93305, 63px 63px #b93305, 64px 64px #b93305, 65px 65px #b93305, 66px 66px #b93305, 67px 67px #b93305, 68px 68px #b93305, 69px 69px #b93305, 70px 70px #b93305, 71px 71px #b93305, 72px 72px #b93305, 73px 73px #b93305, 74px 74px #b93305, 75px 75px #b93305, 76px 76px #b93305, 77px 77px #b93305, 78px 78px #b93305, 79px 79px #b93305, 80px 80px #b93305, 81px 81px #b93305, 82px 82px #b93305, 83px 83px #b93305, 84px 84px #b93305, 85px 85px #b93305, 86px 86px #b93305, 87px 87px #b93305, 88px 88px #b93305, 89px 89px #b93305, 90px 90px #b93305, 91px 91px #b93305, 92px 92px #b93305, 93px 93px #b93305, 94px 94px #b93305, 95px 95px #b93305, 96px 96px #b93305, 97px 97px #b93305, 98px 98px #b93305, 99px 99px #b93305, 100px 100px #b93305, 101px 101px #b93305, 102px 102px #b93305, 103px 103px #b93305, 104px 104px #b93305, 105px 105px #b93305, 106px 106px #b93305, 107px 107px #b93305, 108px 108px #b93305, 109px 109px #b93305, 110px 110px #b93305, 111px 111px #b93305, 112px 112px #b93305, 113px 113px #b93305, 114px 114px #b93305, 115px 115px #b93305, 116px 116px #b93305, 117px 117px #b93305, 118px 118px #b93305, 119px 119px #b93305, 120px 120px #b93305, 121px 121px #b93305, 122px 122px #b93305, 123px 123px #b93305, 124px 124px #b93305, 125px 125px #b93305, 126px 126px #b93305, 127px 127px #b93305, 128px 128px #b93305, 129px 129px #b93305, 130px 130px #b93305, 131px 131px #b93305, 132px 132px #b93305, 133px 133px #b93305, 134px 134px #b93305, 135px 135px #b93305, 136px 136px #b93305, 137px 137px #b93305, 138px 138px #b93305, 139px 139px #b93305, 140px 140px #b93305, 141px 141px #b93305, 142px 142px #b93305, 143px 143px #b93305, 144px 144px #b93305, 145px 145px #b93305, 146px 146px #b93305, 147px 147px #b93305, 148px 148px #b93305, 149px 149px #b93305, 150px 150px #b93305, 151px 151px #b93305, 152px 152px #b93305, 153px 153px #b93305, 154px 154px #b93305, 155px 155px #b93305, 156px 156px #b93305, 157px 157px #b93305, 158px 158px #b93305, 159px 159px #b93305, 160px 160px #b93305, 161px 161px #b93305, 162px 162px #b93305, 163px 163px #b93305, 164px 164px #b93305, 165px 165px #b93305, 166px 166px #b93305, 167px 167px #b93305, 168px 168px #b93305, 169px 169px #b93305, 170px 170px #b93305, 171px 171px #b93305, 172px 172px #b93305, 173px 173px #b93305, 174px 174px #b93305, 175px 175px #b93305, 176px 176px #b93305, 177px 177px #b93305, 178px 178px #b93305, 179px 179px #b93305, 180px 180px #b93305, 181px 181px #b93305, 182px 182px #b93305, 183px 183px #b93305, 184px 184px #b93305, 185px 185px #b93305, 186px 186px #b93305, 187px 187px #b93305, 188px 188px #b93305, 189px 189px #b93305, 190px 190px #b93305, 191px 191px #b93305, 192px 192px #b93305, 193px 193px #b93305, 194px 194px #b93305, 195px 195px #b93305, 196px 196px #b93305, 197px 197px #b93305, 198px 198px #b93305, 199px 199px #b93305, 200px 200px #b93305;
+}
+
+  </style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+
+<body translate="no">
+<div class="banner">
+<h1>Studio Alberto</h1>
+<h2>Programador Web - Front-End</h2>
+</div>
+</body>
+</html>
